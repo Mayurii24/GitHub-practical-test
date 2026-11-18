@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 html {
@@ -11,9 +12,8 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    background: #101827;
-    color: white;
-    line-height: 1.6;
+    background: #0f172a;
+    color: #f1f5f9;
 }
 
 /* Navigation Bar */
@@ -25,119 +25,154 @@ body {
     background: #0b1220;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
-.navbar h2 {
+.navbar h2,
+.logo {
     color: #38bdf8;
-    margin: 0;
+    font-size: 26px;
 }
 
-.navbar ul {
+.navbar ul,
+.nav-links {
     display: flex;
     list-style: none;
     gap: 25px;
 }
 
-.navbar a {
-    color: white;
+.navbar a,
+.nav-links a {
+    color: #f1f5f9;
     text-decoration: none;
     transition: 0.3s;
 }
 
-.navbar a:hover {
+.navbar a:hover,
+.nav-links a:hover {
     color: #38bdf8;
 }
 
 /* General Sections */
-section {
-    padding: 55px 10%;
+section,
+.section {
+    padding: 60px 10%;
     scroll-margin-top: 75px;
 }
 
 /* Hero Section */
 .hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 100px 10%;
+    padding: 70px 10%;
     background: #17243a;
 }
 
-.tag {
-    color: #38bdf8;
-    letter-spacing: 3px;
+.hero h1,
+.hero-content h1 {
+    font-size: 42px;
     margin-bottom: 15px;
 }
 
-.hero h1 {
-    font-size: 45px;
-    margin-bottom: 10px;
-}
-
-.hero h1 span {
+.hero h1 span,
+.hero-content h1 span {
     color: #38bdf8;
 }
 
-.hero h2 {
+.hero h2,
+.hero-content h2 {
+    font-size: 24px;
     color: #cbd5e1;
     margin-bottom: 15px;
 }
 
-.hero p {
+.hero p,
+.hero-content p {
+    color: #cbd5e1;
+    line-height: 1.7;
     max-width: 600px;
-    margin: 10px auto;
+    margin: 10px auto 25px;
 }
 
-/* Button */
-button {
+/* Buttons */
+button,
+.btn {
+    display: inline-block;
     background: #38bdf8;
-    color: #101827;
-    border: none;
+    color: #0f172a;
     padding: 12px 25px;
-    margin-top: 20px;
-    border-radius: 6px;
-    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
     font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
 }
 
-button:hover {
+button:hover,
+.btn:hover {
     background: #0ea5e9;
+    transform: translateY(-3px);
 }
 
 /* Section Headings */
-section h2 {
+section h2,
+.section h2 {
     color: #38bdf8;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+/* Section Paragraphs */
+section p,
+.section p {
+    color: #cbd5e1;
+    line-height: 1.8;
 }
 
 /* Skills */
-.skill-list {
+.skill-list,
+.skills-container {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
 }
 
-.skill-list span {
-    background: #24344d;
-    padding: 12px 22px;
-    border-radius: 6px;
+.skill {
+    background: #1e293b;
+    color: #38bdf8;
+    padding: 15px 25px;
+    border-radius: 5px;
+    border: 1px solid #38bdf8;
 }
 
 /* Projects */
 .project-card {
     background: #1e293b;
-    padding: 20px;
-    margin: 15px 0;
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 600px;
     border-radius: 8px;
+    border: 1px solid #334155;
 }
 
 .project-card h3 {
     color: #38bdf8;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    color: #cbd5e1;
 }
 
 /* Contact */
 .contact {
     background: #17243a;
+    text-align: center;
 }
 
 .contact a {
@@ -145,25 +180,54 @@ section h2 {
     text-decoration: none;
 }
 
+#contact {
+    text-align: center;
+}
+
+#contact p {
+    margin-bottom: 20px;
+}
+
+/* Footer */
+.footer {
+    background: #0b1220;
+    text-align: center;
+    padding: 25px 10%;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
 /* Responsive Design */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .navbar {
         flex-direction: column;
         gap: 15px;
         padding: 20px 5%;
     }
 
-    .navbar ul {
+    .navbar ul,
+    .nav-links {
         flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
     }
 
-    .hero h1 {
+    .hero h1,
+    .hero-content h1 {
         font-size: 32px;
     }
 
-    section {
-        padding: 40px 7%;
+    .hero h2,
+    .hero-content h2 {
+        font-size: 20px;
+    }
+
+    section,
+    .section {
+        padding: 50px 7%;
     }
 }
